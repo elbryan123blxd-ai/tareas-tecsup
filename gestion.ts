@@ -43,7 +43,12 @@ function obtenerAlertasDePago(usuarios: Usuario[]) {
 
 // 6. Probamos la nueva alerta en la consola
 // Primero debemos añadir a un salamanca quele queden pocos dias XD :
-listaUsuarios.push({ id: 5, nombre: "salamanca que le quedan pocos dias xd", estado: "activo", diasRestantes: 2 });
+listaUsuarios.push({ 
+    id: 5, 
+    nombre: "salamanca", 
+    estado: "activo", 
+    diasRestantes: 2 
+});
 
 const usuariosPorVencer = obtenerAlertasDePago(listaUsuarios);
 console.log("\n⚠️ --- ALERTA: USUARIOS POR VENCER (MANDAR WHATSAPP) ---");
