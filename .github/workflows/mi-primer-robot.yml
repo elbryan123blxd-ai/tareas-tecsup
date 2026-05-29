@@ -1,0 +1,24 @@
+name: El Robot Probador de Bryan
+
+# 1. Se activa cuando subes codigo a la rama main
+on:
+  push:
+    branches: [ main ]
+
+# 2. Las tareas que hara en la nube
+jobs:
+  revisar-codigo:
+    runs-on: ubuntu-latest  # Usa una compu virtual con Linux
+
+    steps:
+    - name: 📥 Clonando el codigo de Bryan
+      uses: actions/checkout@v4
+
+    - name: 🕵️ Revisando que el archivo index.html exista
+      run: |
+        if [ -f index.html ]; then
+          echo "¡Perfecto! El archivo index.html existe. ✅"
+        else
+          echo "¡Error! Falta el archivo index.html ❌"
+          exit 1
+        fi
